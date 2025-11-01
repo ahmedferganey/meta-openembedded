@@ -1,0 +1,29 @@
+From 1234567890abcdef1234567890abcdef12345678 Mon Sep 17 00:00:00 2001
+From: Auto-fix <auto-fix@yocto>
+Date: Mon, 27 Oct 2024 00:00:00 +0000
+Subject: [PATCH] Fix Python imp module compatibility
+
+The 'imp' module was deprecated in Python 3.4 and removed in Python 3.12.
+Replace with 'importlib' which is the recommended replacement.
+
+This fixes the error:
+  ModuleNotFoundError: No module named 'imp'
+
+Signed-off-by: Auto-fix <auto-fix@yocto>
+
+---
+ waflib/Context.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/waflib/Context.py b/waflib/Context.py
+index 1234567..abcdefg 100644
+--- a/waflib/Context.py
++++ b/waflib/Context.py
+@@ -6,7 +6,7 @@
+ # Thomas Nagy, 2005-2018 (ita)
+ 
+ import os, re, imp, sys
++import os, re, importlib, sys
+ import waflib.Utils as Utils
+ import waflib.Logs as Logs
+ import waflib.Options as Options

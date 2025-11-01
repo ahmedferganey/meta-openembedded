@@ -16,6 +16,7 @@ DEPENDS = "libsamplerate0 libsndfile1 readline"
 
 SRC_URI = "git://github.com/jackaudio/jack2.git;branch=master;protocol=https \
     file://0001-Remove-usage-of-U-mode-bit-for-opening-files-in-pyth.patch \
+    file://0002-Fix-Python-imp-module-compatibility.patch \
 "
 SRCREV = "a2fe7ec2fdbd315f112c8035282d94a429451178"
 
